@@ -66,4 +66,8 @@ Then(/^I should be sign in$/) do
 		step("I sign in as test")
 	end
 	@current_page = step("I make object for Home page")
+
+Then(/^ I should see workout with (.*) date$/) do |workout_date|
+	@current_page.workout_present(workout_date)
+end
 end

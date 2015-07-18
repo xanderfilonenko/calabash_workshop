@@ -1,6 +1,6 @@
 require 'calabash-android/calabash_steps'
 
-When(/^ I open Login page$/) do
+When(/^I open Login page$/) do
 	
 end
 
@@ -42,6 +42,10 @@ end
 
 And(/^(.*) page is loaded$/) do |page_name|
   @current_page = step("I make object for #{page_name}  page")
+end
+
+And(/^I fill in (.*) with (.*)$/) do |element, text|
+  @current_page.fill_in_input(element,text)
 end
 
 Then(/^I make object for (.*) page$/) do |page_name|

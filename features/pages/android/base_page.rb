@@ -39,11 +39,8 @@ class BasePage < Calabash::ABase
   # execute double tap on element
   def double_tap_on(key)
     element  = get_element_locator(key)
-    wait_for_method_to_exist(element)
-    2.times do
-      touch(element)
-    end
-
+    wait_for_element_exists(element)
+    double_tap(element)
   end
 
   # check that element has text

@@ -52,3 +52,18 @@ Then(/^I make object for (.*) page$/) do |page_name|
   page_name = page_name + " Page"
   page(Object.const_get(page_name.gsub(/\w+/, &:capitalize).gsub(" ", ""))).await
 end
+
+Then(/^I sign in as (.*)$/) do |user|
+	@current_page.sign_in_as user
+end
+
+Then(/^I should be sign in$/) do
+	@current_page = step("I make object for Home page")
+	unless @current_page.has_element?("Workout button")
+		@current_page = step("I make object for Start page")
+		@current_page.tap_on("log in button")
+		@current_page = step("I make object for Login page")
+		step("I sign in as test")
+	end
+	@current_page = step("I make object for Home page")
+end

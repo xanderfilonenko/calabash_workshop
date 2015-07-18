@@ -32,7 +32,7 @@ class HomePage < BasePage
   end
 
   def await
-    element_should_be_present("Workout quantity Field")
+    # element_should_be_present("Workout quantity Field")
     self
   end
 

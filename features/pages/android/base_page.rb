@@ -38,9 +38,10 @@ class BasePage < Calabash::ABase
 
   # execute double tap on element
   def double_tap_on(key)
-    wait_for_method_to_exist(key)
+    element  = get_element_locator(key)
+    wait_for_method_to_exist(element)
     2.times
-      touch(key)
+      touch(element)
     end
 
   end

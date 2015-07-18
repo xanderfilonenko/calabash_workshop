@@ -26,7 +26,8 @@ class BasePage < Calabash::ABase
 
   def buttons
     {
-
+      "set" => "button text:'Set'",
+      "date_picker" => "datePicker"
     }
 
 # METHODS
@@ -135,4 +136,12 @@ class BasePage < Calabash::ABase
     touch(get_element_locator(key))
   end
 
+  # pick date in a date picker
+  def pick_date(key, day, month, year)
+    date_picker = get_element_locator(key)
+    wait_for_element_exists(date_picker)
+    tap_on(date_picker)
+    query(date_picker, :method_name =>'updateDate',:arguments =>[year,month,day])
+    tap_on(get_element_locator(set))
+  end
 end

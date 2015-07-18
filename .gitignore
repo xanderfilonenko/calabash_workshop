@@ -1,0 +1,5 @@
+.calabash_settings
+.idea/*
+.irb-history
+test_servers/*
+*.png

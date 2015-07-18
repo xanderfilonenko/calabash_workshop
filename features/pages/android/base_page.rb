@@ -84,7 +84,8 @@ class BasePage < Calabash::ABase
 
   # check element present on the page or not. Return true or false
   def has_element?(key)
-
+      element = get_element_locator(key)
+      element_exists(element)
   end
 
   # write text in field using keyboard 

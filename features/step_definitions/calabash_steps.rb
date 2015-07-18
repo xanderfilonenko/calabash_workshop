@@ -67,3 +67,9 @@ Then(/^I should be sign in$/) do
 	end
 	@current_page = step("I make object for Home page")
 end
+
+When(/^I select (.*) option from (.*) dropdown$/) do |option, element|
+  @current_page.select(element, option)
+end
+
+

@@ -129,7 +129,8 @@ class BasePage < Calabash::ABase
 
   # select option from dropdown
   def select(element, option)
-
+    tap_on(element)
+    tap_on(option)
   end
 
   # execute taping on element Nick

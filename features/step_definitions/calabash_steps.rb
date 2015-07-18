@@ -4,19 +4,19 @@ When(/^I open Login page$/) do
 	
 end
 
-Then(/^(.*) should be on the screen/) do |element|
+Then(/^(.*) should be on the screen$/) do |element|
 	@current_page.element_should_be_present(element)
 end
 
-Then(/^(.*) should not be on the screen/) do |element|
+Then(/^(.*) should not be on the screen$/) do |element|
 	@current_page.element_should_not_be_present(element)
 end
 
-Then(/^(.*) should have (.*) text/) do |element, text|
+Then(/^(.*) should have (.*) text$/) do |element, text|
   @current_page.element_should_have_text(element, text)
 end
 
-Then(/^ I double tab on (.*) element/) do |element| 
+Then(/^I double tab on (.*) element$/) do |element| 
 	@current_page.double_tap_on(element)
 end
 

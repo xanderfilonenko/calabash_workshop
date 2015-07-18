@@ -1,4 +1,5 @@
 # -*- encoding : utf-8 -*-
+require 'calabash-android/abase'
 
 # This is Parent class for all classes where we have everywhere usefull functions
 class HelpPage < BasePage

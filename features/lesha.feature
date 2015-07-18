@@ -1,7 +1,7 @@
 Feature: Skip tour on Help page and open Home page
 
 	Scenario: Skip tour on Help page
-	Given I Open Start page
+	Given I open Start page
 	When I tap on log in button
 	Then Login page is loaded
 	When I fill in xID field with 002200

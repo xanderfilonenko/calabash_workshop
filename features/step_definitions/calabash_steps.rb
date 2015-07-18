@@ -24,3 +24,6 @@ Then(/^I pick day (.*) and month (.*) and year (.*)$/) do |day, month, year|
   @current_page.pick_date(date_picker, day, month, year)
 end
 
+Then(/^I pick hour (.*) and minute (.*)$/) do |hour, minute|
+  @current_page.pick_time(time_picker, hour, minute)
+end

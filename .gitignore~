@@ -3,3 +3,4 @@
 .irb-history
 test_servers/*
 *.png
+~*

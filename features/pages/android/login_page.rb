@@ -20,4 +20,9 @@ class LoginPage < BasePage
   end
   
 # METHODS
+
+  def await
+    element_should_be_present("xID field")
+    self
+  end
 end

@@ -100,7 +100,7 @@ class BasePage < Calabash::ABase
   # write text in field using keyboard
   def fill_in_input(key, text)
     wait_for_elements_exist(get_element_locator(key), :timeout => 10, :timeout_message => 'Timed out waiting element: ' + key)
-    touch(key)
+    tap_on(key)
     keyboard_enter_text(text)
     hide_soft_keyboard
   end

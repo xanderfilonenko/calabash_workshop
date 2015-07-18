@@ -38,7 +38,8 @@ class BasePage < Calabash::ABase
 
   # execute double tap on element
   def double_tap_on(key)
-
+    touch(key)
+    touch(key)
   end
 
   # check that element has text

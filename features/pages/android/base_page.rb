@@ -93,7 +93,7 @@ class BasePage < Calabash::ABase
   # check element present on the page or not. Return true or false
   def has_element?(key)
       element = get_element_locator(key)
-      wait_for_element_exists(element)
+      # wait_for_element_exists(element)
       element_exists(element)
   end
 
@@ -134,6 +134,7 @@ class BasePage < Calabash::ABase
 
   # execute taping on element Nick
   def tap_on(key)
+    wait_for_element_exists(get_element_locator(key))
     touch(get_element_locator(key))
   end
 

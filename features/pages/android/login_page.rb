@@ -21,6 +21,12 @@ class LoginPage < BasePage
   
 # METHODS
 
+  def sign_in_as(user)
+    fill_in_input("xID field", "002200")
+    fill_in_input("passcode field", "1212")
+    tap_on("sign in button")
+  end
+
   def await
     element_should_be_present("xID field")
     self

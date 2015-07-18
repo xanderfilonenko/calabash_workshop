@@ -10,3 +10,5 @@ Feature: Skip tour on Help page and open Home page
     Then Help page is loaded
     When I tap on Go to App button
     Then Home page is loaded
+    When I tap on Workout button
+    Then Worckout page is loaded

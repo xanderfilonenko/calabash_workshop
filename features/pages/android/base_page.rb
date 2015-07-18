@@ -38,7 +38,9 @@ class BasePage < Calabash::ABase
 
   # execute double tap on element
   def double_tap_on(key)
-
+    element  = get_element_locator(key)
+    wait_for_element_exists(element)
+    double_tap(element)
   end
 
   # check that element has text
@@ -88,7 +90,9 @@ class BasePage < Calabash::ABase
 
   # check element present on the page or not. Return true or false
   def has_element?(key)
-
+      element = get_element_locator(key)
+      wait_for_element_exists(element)
+      element_exists(element)
   end
 
   # write text in field using keyboard 

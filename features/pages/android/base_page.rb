@@ -38,22 +38,26 @@ class BasePage < Calabash::ABase
 
   # execute double tap on element
   def double_tap_on(key)
-
+    element  = get_element_locator(key)
+    wait_for_element_exists(element)
+    double_tap(element)
   end
 
   # check that element has text
   def element_should_have_text(key, text)
-
+    if get_element_text(key) == text then true
+    else raise 'Element ' + key.to_s + ' does not have text ' + text
+    end
   end
 
   # wait for element present on page
   def element_should_be_present(key)
-
+      wait_for_elements_exist(get_element_locator(key))
   end
 
   # wait for element does not present on page
   def element_should_not_be_present(key)
-
+      wait_for_elements_do_not_exist(get_element_locator(key))
   end
 
   # get value of class attribute
@@ -75,6 +79,10 @@ class BasePage < Calabash::ABase
 
   # get element text on web page
   def get_element_text(key)
+    if query(get_element_locator(key)])[0].has_key?("text")
+      query(get_element_locator(key)], "text")[0]
+    elsif query(get_element_locator(key)])[0].has_key?("textContent")
+      query(get_element_locator(key)], "textContent")[0]
     else
       nil
     end
@@ -82,12 +90,17 @@ class BasePage < Calabash::ABase
 
   # check element present on the page or not. Return true or false
   def has_element?(key)
-
+      element = get_element_locator(key)
+      wait_for_element_exists(element)
+      element_exists(element)
   end
 
-  # write text in field using keyboard 
+  # write text in field using keyboard
   def fill_in_input(key, text)
-
+    wait_for_elements_exist(get_element_locator(key), :timeout => 10, :timeout_message => 'Timed out waiting element: ' + key)
+    touch(key)
+    keyboard_enter_text(text)
+    hide_soft_keyboard
   end
 
   # write text in several fields using keyboard 

@@ -5,11 +5,11 @@ When(/^ I open Login page$/) do
 end
 
 Then(/^(.*) should be on the screen/) do |element|
-	element_should_be_present(element)
+	@current_page.element_should_be_present(element)
 end
 
 Then(/^(.*) should not be on the screen/) do |element|
-	element_should_not_be_present(element)
+	@current_page.element_should_not_be_present(element)
 end
 
 Then(/^(.*) should have (.*) text/) do |element, text|
@@ -22,5 +22,27 @@ end
 
 Then(/^I pick day (.*) and month (.*) and year (.*)$/) do |day, month, year|
   @current_page.pick_date(date_picker, day, month, year)
+end
+
+When(/^I open Start page$/) do 
+	@current_page = StartPage.await
+end
+
+Then(/^I tap on (.*)$/ ) do |element|
+	@current_page.tap_on(element)
+end
+
+
+Then(/^I make long tap on (.*)$/ ) do |element|
+	@current_page.long_tap_on(element)
+end
+
+And(/^(.*) page is loaded$/) do |page_name|
+  @current_page = step("I make object for #{page_name}  page")
+end
+
+Then(/^I make object for (.*) page$/) do |page_name|
+  page_name = page_name + " Page"
+  page(Object.const_get(page_name.gsub(/\w+/, &:capitalize).gsub(" ", ""))).await
 end
 

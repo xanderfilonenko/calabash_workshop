@@ -5,8 +5,9 @@ class WorkoutsPage < BasePage
 # LOCATORS
 def buttons
 	{
-		"new workout" => "* id:'menu_add_workout'"
-
+		"new workout" => "* id:'menu_add_workout'",
+		"workout tab" => "* id:'radio_#{@temp_var}'",
+		"back button" => "* id:'home'"
 	}
 end
 
@@ -21,10 +22,17 @@ def dropdowns
 	}
 end
 
+
 def list
 	{
 		"Workout item " => "* text:'#{@temp_var}' parent * id:'main_item'"
 	}
+
+
+
+#METHODS
+def tap_on_log_in
+	tap_on("log in button")
 end
 
 
@@ -42,4 +50,11 @@ def get_workout_info(workout_date,info)
 	
 end
 
+
+def tap_on_tab (tab_name)
+  @temp_var = tab_name
+  tap_on("workout tab")
 end
+
+end
+

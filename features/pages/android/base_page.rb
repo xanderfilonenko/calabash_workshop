@@ -100,13 +100,15 @@ class BasePage < Calabash::ABase
 
   end
 
-  # get element from page
+  # get element from page Nick
   def find(key)
-
+    query(get_element_locator(key))
+    # check_element_exists
   end
 
-  # execute long tap on element
+  # execute long tap on element Nick
   def long_tap_on(key)
+    long_press_when_element_exists(get_element_locator(key), options = {})
 
   end
 
@@ -115,9 +117,9 @@ class BasePage < Calabash::ABase
 
   end
 
-  # execute taping on element
+  # execute taping on element Nick
   def tap_on(key)
-
+    touch(get_element_locator(key))
   end
 
 end

@@ -20,3 +20,4 @@ class LoginPage < BasePage
   end
   
 # METHODS
+end

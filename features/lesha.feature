@@ -7,6 +7,6 @@ Feature: Skip tour on Help page and open Home page
 	When I fill in xID field with 002200
     And I fill in passcode field with 1212
     And I tap on sign in button
-    Then Help page is loaded
-    When I tap on Go to App button
+    #Then Help page is loaded
+    #When I tap on Go to App button
     Then Home page is loaded

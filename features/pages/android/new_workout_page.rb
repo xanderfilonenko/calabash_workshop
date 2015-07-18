@@ -10,6 +10,7 @@ class NewWorkoutPage < BasePage
       "Duration field" => "EditText id:'et_duration'"
       "Distance field" => "EditText id:'et_distance'"
       "Calories field" => "EditText id:'et_calories'"
+      "Europe/Kiev" => "TextView text:'Europe/Kiev'"
     }
   end
 

@@ -32,3 +32,4 @@ class HelpPage < BasePage
     element_should_be_present("Go to App button")
     self
   end
+end

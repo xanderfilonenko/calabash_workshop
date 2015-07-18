@@ -29,7 +29,7 @@ Then(/^I pick hour (.*) and minute (.*)$/) do |hour, minute|
 end
 
 When(/^I open Start page$/) do 
-	@current_page = StartPage.await
+	@current_page = page(StartPage).await
 end
 
 Then(/^I tap on (.*)$/ ) do |element|

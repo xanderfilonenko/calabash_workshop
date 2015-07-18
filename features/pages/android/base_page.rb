@@ -48,12 +48,12 @@ class BasePage < Calabash::ABase
 
   # wait for element present on page
   def element_should_be_present(key)
-
+      wait_for_elements_exist(get_element_locator(key))
   end
 
   # wait for element does not present on page
   def element_should_not_be_present(key)
-
+      wait_for_elements_do_not_exist(get_element_locator(key))
   end
 
   # get value of class attribute

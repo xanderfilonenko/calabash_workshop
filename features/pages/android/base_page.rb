@@ -156,4 +156,10 @@ class BasePage < Calabash::ABase
     set_time(time_picker, hour, minute)
     tap_on(get_element_locator(set))
   end
+  
+  # scroll page
+  def scroll(key)
+      scroll_to(get_element_locator(key))
+  end
+  
 end

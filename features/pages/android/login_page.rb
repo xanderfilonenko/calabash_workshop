@@ -1,3 +1,7 @@
+require 'calabash-android/abase'
+
+#This is class for Login page
+
 class LoginPage < BasePage
 
 # LOCATORS

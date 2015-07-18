@@ -6,16 +6,17 @@ class NewWorkoutPage < BasePage
 
   def fields 
     {
-      "Timezone field" => "TextView text:'#{@timezone}'"
-      "Duration field" => "EditText id:'et_duration'"
-      "Distance field" => "EditText id:'et_distance'"
-      "Calories field" => "EditText id:'et_calories'"
+      "Timezone field" => "TextView text:'#{@timezone}'",
+      "Duration field" => "EditText id:'et_duration'",
+      "Distance field" => "EditText id:'et_distance'",
+      "Calories field" => "EditText id:'et_calories'",
+      "Europe/Kiev" => "TextView text:'Europe/Kiev'",
     }
   end
 
   def dropdowns
     {
-      "Time zone spinner" => "Spinner id:'et_time_zone'"
+      "Time zone spinner" => "Spinner id:'et_time_zone'",
     }
   end
 
@@ -27,10 +28,10 @@ class NewWorkoutPage < BasePage
 
   def buttons
     {
-      "Back button" => "ImageView id:'home'"
-      "Record Manually button" => "TextView text:'RECORD MANUALLY'"
-      "Cancel" => "TextView text:'CANCEL'"
-      "Save" =>  "TextView text:'SAVE'"
+      "Back button" => "ImageView id:'home'",
+      "Record Manually button" => "TextView text:'RECORD MANUALLY'",
+      "Cancel" => "TextView text:'CANCEL'",
+      "Save" =>  "TextView text:'SAVE'",
     }
   end
 

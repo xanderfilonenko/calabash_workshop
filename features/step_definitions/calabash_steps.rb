@@ -68,10 +68,14 @@ Then(/^I should be sign in$/) do
 	@current_page = step("I make object for Home page")
 end
 
-When(/^I select (.*) option from (.*) dropdown$/) do |option, element|
-  @current_page.select(element, option)
+Then(/^ I should see workout with (.*) date$/) do |workout_date|
+	@current_page.workout_present(workout_date)
 end
 
 
+
+When(/^I select (.*) option from (.*) dropdown$/) do |option, element|
+  @current_page.select(element, option)
+end
 
 

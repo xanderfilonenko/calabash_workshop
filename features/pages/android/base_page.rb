@@ -79,10 +79,10 @@ class BasePage < Calabash::ABase
 
   # get element text on web page
   def get_element_text(key)
-    if query(get_element_locator(key)])[0].has_key?("text")
-      query(get_element_locator(key)], "text")[0]
-    elsif query(get_element_locator(key)])[0].has_key?("textContent")
-      query(get_element_locator(key)], "textContent")[0]
+    if query(get_element_locator(key))[0].has_key?("text")
+      query(get_element_locator(key), "text")[0]
+    elsif query(get_element_locator(key))[0].has_key?("textContent")
+      query(get_element_locator(key), "textContent")[0]
     else
       nil
     end

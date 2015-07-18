@@ -18,6 +18,7 @@ Before do |scenario|
     # uninstall_apps
     # install_app(ENV['TEST_APP_PATH'])
     # install_app(ENV['APP_PATH'])
+
     FeatureMemory.feature = feature
     FeatureMemory.invocation = 1
   else

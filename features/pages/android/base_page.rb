@@ -43,7 +43,9 @@ class BasePage < Calabash::ABase
 
   # check that element has text
   def element_should_have_text(key, text)
-
+    if get_element_text(key) == text then true
+    else raise 'Element ' + key.to_s + ' does not have text ' + text
+    end
   end
 
   # wait for element present on page
@@ -75,6 +77,10 @@ class BasePage < Calabash::ABase
 
   # get element text on web page
   def get_element_text(key)
+    if query(get_element_locator(key)])[0].has_key?("text")
+      query(get_element_locator(key)], "text")[0]
+    elsif query(get_element_locator(key)])[0].has_key?("textContent")
+      query(get_element_locator(key)], "textContent")[0]
     else
       nil
     end

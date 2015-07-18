@@ -29,7 +29,7 @@ class BasePage < Calabash::ABase
       "set" => "button text:'Set'",
       "date_picker" => "datePicker"
     }
-
+  end
 # METHODS
 
   # accepting text which you entered in input field

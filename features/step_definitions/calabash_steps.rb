@@ -24,6 +24,10 @@ Then(/^I pick day (.*) and month (.*) and year (.*)$/) do |day, month, year|
   @current_page.pick_date(date_picker, day, month, year)
 end
 
+Then(/^I pick hour (.*) and minute (.*)$/) do |hour, minute|
+  @current_page.pick_time(time_picker, hour, minute)
+end
+
 When(/^I open Start page$/) do 
 	@current_page = StartPage.await
 end
@@ -31,7 +35,6 @@ end
 Then(/^I tap on (.*)$/ ) do |element|
 	@current_page.tap_on(element)
 end
-
 
 Then(/^I make long tap on (.*)$/ ) do |element|
 	@current_page.long_tap_on(element)
@@ -41,8 +44,11 @@ And(/^(.*) page is loaded$/) do |page_name|
   @current_page = step("I make object for #{page_name}  page")
 end
 
+And(/^I fill in (.*) with (.*)$/) do |element, text|
+  @current_page.fill_in_input(element,text)
+end
+
 Then(/^I make object for (.*) page$/) do |page_name|
   page_name = page_name + " Page"
   page(Object.const_get(page_name.gsub(/\w+/, &:capitalize).gsub(" ", ""))).await
 end
-

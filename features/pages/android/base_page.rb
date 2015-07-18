@@ -27,7 +27,8 @@ class BasePage < Calabash::ABase
   def buttons
     {
       "set" => "button text:'Set'",
-      "date_picker" => "datePicker"
+      "date_picker" => "datePicker",
+      "time_picker" => "datePicker"
     }
   end
 # METHODS
@@ -141,7 +142,16 @@ class BasePage < Calabash::ABase
     date_picker = get_element_locator(key)
     wait_for_element_exists(date_picker)
     tap_on(date_picker)
-    query(date_picker, :method_name =>'updateDate',:arguments =>[year,month,day])
+    set_date(date_picker, year,month,day)
+    tap_on(get_element_locator(set))
+  end
+
+  # pick time in a time picker
+  def pick_time(key, hour, minute)
+    time_picker = get_element_locator(key)
+    wait_for_element_exists(time_picker)
+    tap_on(time_picker)
+    set_time(time_picker, hour, minute)
     tap_on(get_element_locator(set))
   end
 end
